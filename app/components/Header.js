@@ -1,22 +1,17 @@
-import {React, useState} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import React from 'react';
+import {useState} from 'react';
+import {View, StyleSheet, Image} from 'react-native';
 import {Colors} from '../styles/Colors';
 
-const onPageLayout = function(event) {
-  const {height} = event.nativeEvent.layout;
-  console.log('ON LAYOUT');
-  return height;
-};
 function renderLogo(headerHeight) {
   const imageRatio = 261 / 100;
-  const imageWidth = imageRatio * headerHeight;
+  const imageWidth = imageRatio * (headerHeight - 14);
   const imageHeight = headerHeight;
-
+  console.log('renderLogo ' + imageWidth + ' ' + imageHeight);
   return (
     <Image
       style={{
         flex: 1,
-        resizeMode: 'contain',
         width: imageWidth,
         height: imageHeight,
       }}
@@ -24,13 +19,15 @@ function renderLogo(headerHeight) {
     />
   );
 }
-
 export default function Header() {
   const [headerHeight, setHeaderHeight] = useState(0);
+  const onPageLayout = function(event) {
+    const {height} = event.nativeEvent.layout;
+    console.log('ON LAYOUT');
+    setHeaderHeight(height);
+  };
   return (
-    <View
-      style={styles.header}
-      onPageLayout={e => setHeaderHeight(onPageLayout(e))}>
+    <View style={styles.header} onLayout={onPageLayout}>
       <View style={styles.logoImageContainer}>{renderLogo(headerHeight)}</View>
     </View>
   );
@@ -40,18 +37,10 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: Colors.lightGreen,
     flex: 0.5,
-    //paddingLeft: 0, //NOT THIS
-    //marginLeft: 0, //NOT THIS
   },
-  /*
-  logoImage: {
-    flex: 1,
-    resizeMode: 'contain',
-    //paddingLeft: 0, //NOT THIS
-  },*/
   logoImageContainer: {
     flex: 1,
-    padding: 7,
-    //marginLeft: 0, //NOT THIS
+    paddingVertical: 7,
+    paddingLeft: 18,
   },
 });

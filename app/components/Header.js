@@ -3,11 +3,12 @@ import {useState} from 'react';
 import {View, StyleSheet, Image} from 'react-native';
 import {Colors} from '../styles/Colors';
 
+//Calculates the size of the logo
+//use instead of 'contain' to avoid the awkward amount of padding it creates on the left
 function renderLogo(headerHeight) {
   const imageRatio = 261 / 100;
   const imageWidth = imageRatio * (headerHeight - 14);
   const imageHeight = headerHeight;
-  console.log('renderLogo ' + imageWidth + ' ' + imageHeight);
   return (
     <Image
       style={{
@@ -21,9 +22,10 @@ function renderLogo(headerHeight) {
 }
 export default function Header() {
   const [headerHeight, setHeaderHeight] = useState(0);
+
+  //get height of menu bar to use in logo size calculations
   const onPageLayout = function(event) {
     const {height} = event.nativeEvent.layout;
-    console.log('ON LAYOUT');
     setHeaderHeight(height);
   };
   return (

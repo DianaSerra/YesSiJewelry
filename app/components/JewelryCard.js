@@ -3,15 +3,19 @@ import {Text, ImageBackground, Image, View} from 'react-native';
 import {Card, CardItem} from 'native-base';
 import {Colors} from '../styles/Colors';
 
-function renderIDCircle(cardDimension, cardX, cardY, ID, imageURL) {
-  const imageRatio = 226 / 200; //  width/height
-  const imageWidth = imageRatio * (cardDimension * (1 / 3));
-  const imageHeight = cardDimension * (1 / 3);
+function renderIDCircle(
+  cardDimension,
+  cardX,
+  cardY,
+  ID,
+  bubbleWidth,
+  bubbleHeight,
+) {
   return (
     <ImageBackground
       style={{
-        width: imageWidth,
-        height: imageHeight,
+        width: bubbleWidth,
+        height: bubbleHeight,
         position: 'absolute',
         top: cardY + 0.75 * cardDimension,
         left: cardX + 0.75 * cardDimension,
@@ -31,6 +35,18 @@ function renderIDCircle(cardDimension, cardX, cardY, ID, imageURL) {
   );
 }
 class JewelryCard extends Component {
+  constructor(props) {
+    super(props);
+    const imageRatio = 226 / 200; //  width/height
+    const imageWidth = imageRatio * (this.props.cardLength * (1 / 3));
+    const imageHeight = this.props.cardLength * (1 / 3);
+    this.state = {
+      cardX: 0,
+      cardY: 0,
+      bubbleWidth: imageWidth,
+      bubbleHeight: imageHeight,
+    };
+  }
   cardStyle = function(cardDimension) {
     return {
       borderRadius: 36,
@@ -47,11 +63,6 @@ class JewelryCard extends Component {
     };
   };
 
-  state = {
-    cardX: 0,
-    cardY: 0,
-  };
-
   updateXY = function(X, Y) {};
 
   //get height of menu bar to use in logo size calculations
@@ -61,7 +72,12 @@ class JewelryCard extends Component {
   };
   render() {
     return (
-      <View style={{height: (5 / 4) * this.props.cardLength}}>
+      <View
+        style={{
+          flex: 1,
+          height: 0.75 * this.props.cardLength + this.state.bubbleHeight + 2,
+          width: 0.75 * this.props.cardLength + this.state.bubbleWidth + 2, //added the 2 because it still seemed flattened on the right?
+        }}>
         <Card
           style={this.cardStyle(this.props.cardLength)}
           onLayout={this.onPageLayout}>
@@ -77,6 +93,8 @@ class JewelryCard extends Component {
             this.state.cardX,
             this.state.cardY,
             this.props.jewelID,
+            this.state.bubbleWidth,
+            this.state.bubbleHeight,
           )}
         </Card>
       </View>

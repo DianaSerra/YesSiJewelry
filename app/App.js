@@ -26,14 +26,7 @@ const App: () => React$Node = () => {
     <>
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={{flex: 1}}>
-        <Header />
-        <View style={{flex: 5.5}}>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.scrollView}>
-            <ShowAllScreen />
-          </ScrollView>
-        </View>
+        <ShowAllScreen />
       </SafeAreaView>
     </>
   );
@@ -43,7 +36,6 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
     flex: 1,
-    overflow: 'visible',
   },
 });
 

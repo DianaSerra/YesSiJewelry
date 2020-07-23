@@ -1,8 +1,10 @@
 import React from 'react';
 import {useState} from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image, Dimensions} from 'react-native';
 import {Colors} from '../styles/Colors';
 
+const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').height;
 //Calculates the size of the logo
 //use instead of 'contain' to avoid the awkward amount of padding it creates on the left
 function renderLogo(headerHeight) {
@@ -27,6 +29,7 @@ export default function Header() {
   const onPageLayout = function(event) {
     const {height} = event.nativeEvent.layout;
     setHeaderHeight(height);
+    console.log('onPageLayout : ' + height);
   };
   return (
     <View style={styles.header} onLayout={onPageLayout}>

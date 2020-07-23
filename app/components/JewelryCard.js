@@ -86,7 +86,10 @@ class JewelryCard extends Component {
             button
             cardBody
             onPress={() => alert('You Clicked on Jewel ' + this.props.jewelID)}>
-            <Image style={styles.imageStyle} source={this.props.imageURL} />
+            <Image
+              style={styles.imageStyle}
+              source={{uri: this.props.imageURL}}
+            />
           </CardItem>
           {renderIDCircle(
             this.props.cardLength,
@@ -106,6 +109,8 @@ const styles = {
     borderRadius: 36,
     flex: 1,
     resizeMode: 'center',
+    width: 500,
+    height: 500,
   },
 };
 export default JewelryCard;

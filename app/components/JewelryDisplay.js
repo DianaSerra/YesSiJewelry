@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, FlatList} from 'react-native';
+import {View, FlatList, Text} from 'react-native';
 import JewelryCard from './JewelryCard';
 import Header from './Header';
 
@@ -10,6 +10,9 @@ import Header from './Header';
 - If odd number of cards, place on the side, not the middle
 */
 class JewelryDisplay extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -22,7 +25,7 @@ class JewelryDisplay extends Component {
                 <JewelryCard
                   cardLength={220}
                   jewelID={item.id}
-                  imageURL={item.src}
+                  imageURL={item.imageURL}
                 />
               </View>
             )}

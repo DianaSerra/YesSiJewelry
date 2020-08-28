@@ -15,31 +15,28 @@ class JewelryDisplay extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <Header />
-        <View style={styles.listContainer}>
-          <FlatList
-            data={this.props.dataSource}
-            renderItem={({item}) => (
-              <View style={styles.cardContainer}>
-                <JewelryCard
-                  cardLength={220}
-                  jewelID={item.id}
-                  imageURL={item.imageURL}
-                />
-              </View>
-            )}
-            numColumns={2}
-          />
-        </View>
-      </View>
+      <FlatList
+        data={this.props.dataSource}
+        renderItem={({item}) => (
+          <View style={styles.cardContainer}>
+            <JewelryCard
+              cardLength={220}
+              jewelID={item.id}
+              imageURL={item.imageURL}
+              description={item.description}
+              price={item.price}
+            />
+          </View>
+        )}
+        numColumns={2}
+      />
     );
   }
 }
 
 const styles = {
-  container: {flex: 1},
-  listContainer: {flex: 5.5},
+  //container: {flex: 1},
+  //listContainer: {flex: 5.5},
   cardContainer: {
     flex: 1,
     flexDirection: 'column',

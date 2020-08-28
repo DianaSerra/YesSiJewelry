@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import JewelryDisplay from '../components/JewelryDisplay.js';
-import {ActivityIndicator, View} from 'react-native';
 
 class ShowAllScreen extends Component {
   constructor(props) {
@@ -8,11 +7,7 @@ class ShowAllScreen extends Component {
   }
   render() {
     const {pieces} = this.props;
-    return (
-      <View style={{flex: 1}}>
-        <JewelryDisplay dataSource={pieces} />
-      </View>
-    );
+    return <JewelryDisplay dataSource={pieces} />;
   }
 }
 export default ShowAllScreen;

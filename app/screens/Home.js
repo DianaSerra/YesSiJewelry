@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, SafeAreaView, StatusBar, Text} from 'react-native';
 import ShowAllScreen from './ShowAllScreen.js';
+import Header from '../components/Header.js';
 
 import {connect} from 'react-redux';
 import {fetchAllPieceData} from '../actions/pieces.js';
@@ -22,9 +23,12 @@ class Home extends Component {
     return (
       <View>
         <StatusBar barStyle="light-content" />
-        <SafeAreaView style={{flex: 1}}>
+        <SafeAreaView style={{paddingBottom: 160}}>
+          <Header />
           {isFetching ? (
-            <Text>Loading...</Text>
+            <View>
+              <Text>Loading...</Text>
+            </View>
           ) : (
             <ShowAllScreen pieces={pieces} />
           )}

@@ -1,39 +1,24 @@
 import React from 'react';
 import {useState} from 'react';
-import {View, StyleSheet, Image, Dimensions} from 'react-native';
+import {View, StyleSheet, Image, Dimensions, Text} from 'react-native';
 import {Colors} from '../styles/Colors';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').height;
-//Calculates the size of the logo
-//use instead of 'contain' to avoid the awkward amount of padding it creates on the left
-function renderLogo(headerHeight) {
-  const imageRatio = 261 / 100;
-  const imageWidth = imageRatio * (headerHeight - 14);
-  const imageHeight = headerHeight;
-  return (
-    <Image
-      style={{
-        flex: 1,
-        width: imageWidth,
-        height: imageHeight,
-      }}
-      source={require('../assets/images/YSJ_Logo.png')}
-    />
-  );
-}
-export default function Header() {
-  const [headerHeight, setHeaderHeight] = useState(0);
 
-  //get height of menu bar to use in logo size calculations
-  const onPageLayout = function(event) {
-    const {height} = event.nativeEvent.layout;
-    setHeaderHeight(height);
-    console.log('onPageLayout : ' + height);
-  };
+export default function Header() {
   return (
-    <View style={styles.header} onLayout={onPageLayout}>
-      <View style={styles.logoImageContainer}>{renderLogo(headerHeight)}</View>
+    <View style={styles.header}>
+      <View style={styles.logoImageContainer}>
+        <Image
+          style={{
+            flex: 1,
+            width: 177.161396484375,
+            height: 82.20844628731922,
+          }}
+          source={require('../assets/images/YSJ_Logo.png')}
+        />
+      </View>
     </View>
   );
 }
@@ -41,7 +26,9 @@ export default function Header() {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: Colors.lightGreen,
-    flex: 0.5,
+    //flex: 0.5,
+    width: 913.4271809702136, //getHeaderDimensions().headerWidth,
+    height: 82.20844628731922, //getHeaderDimensions().headerHeight,
   },
   logoImageContainer: {
     flex: 1,

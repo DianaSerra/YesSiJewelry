@@ -8,7 +8,7 @@ function requestAllPieceData() {
   return {type: REQUEST_ALL_PIECE_DATA};
 }
 function receiveAllPieceData(json) {
-  console.log('receiveAllPieceData: ' + json);
+  'receiveAllPieceData: ' + json;
   return {
     type: RECEIVE_ALL_PIECE_DATA,
     pieces: json,

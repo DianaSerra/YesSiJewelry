@@ -85,7 +85,16 @@ class JewelryCard extends Component {
             style={this.cardItemStyle(this.props.cardLength)}
             button
             cardBody
-            onPress={() => alert('You Clicked on Jewel ' + this.props.jewelID)}>
+            onPress={() =>
+              alert(
+                'Jewel ' +
+                  this.props.jewelID +
+                  '\nDescription: ' +
+                  this.props.description +
+                  '\nPrice: $' +
+                  this.props.price,
+              )
+            }>
             <Image
               style={styles.imageStyle}
               source={{uri: this.props.imageURL}}

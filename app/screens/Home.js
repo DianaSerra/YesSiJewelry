@@ -19,7 +19,6 @@ class Home extends Component {
   render() {
     const {isFetching, pieces} = this.props;
     const piecesLength = pieces.length > 0;
-    console.log('HOME : ' + piecesLength);
     return (
       <View>
         <StatusBar barStyle="light-content" />

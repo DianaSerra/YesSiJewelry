@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import {View, FlatList, Text} from 'react-native';
+import {View, FlatList} from 'react-native';
 import JewelryCard from './JewelryCard';
-import Header from './Header';
 
 /*
  TODO: 

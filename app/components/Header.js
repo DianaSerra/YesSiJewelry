@@ -1,7 +1,8 @@
-import React from 'react';
-import {View, StyleSheet, Image, Dimensions, Text} from 'react-native';
-import {Button} from 'native-base';
+import React, {Component} from 'react';
+import {View, StyleSheet, Image, Dimensions, StatusBar} from 'react-native';
+import {Button, Text} from 'native-base';
 import {Colors} from '../styles/Colors';
+import {useNavigation} from '@react-navigation/native';
 
 //hardcoded values for the specific tablet this app will be used on
 const deviceWidth = Dimensions.get('window').width;
@@ -9,26 +10,48 @@ const headerHeight = 82.20844628731922;
 const headerWidth = deviceWidth;
 const logoWidth = 187.7;
 
-export default function Header() {
-  return (
-    <View style={styles.headerContainer}>
-      <View style={styles.header}>
-        <View style={styles.logoImageContainer}>
-          <Image
-            style={styles.logo}
-            source={require('../assets/images/YSJ_Logo.png')}
-          />
-        </View>
-        <View style={styles.addButtonContainer}>
-          <View style={styles.addButtonWrapper}>
-            <Button bordered primary style={styles.addButton} title="add piece">
-              <Text style={styles.buttonText}>+</Text>
-            </Button>
+class Header extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <View>
+        <View style={styles.headerContainer}>
+          <View style={styles.header}>
+            <View style={styles.logoImageContainer}>
+              <Image
+                style={styles.logo}
+                source={require('../assets/images/YSJ_Logo.png')}
+              />
+            </View>
+            <View style={styles.addButtonContainer}>
+              <View style={styles.addButtonWrapper}>
+                {this.props.onAddPieceForm ? (
+                  <Button
+                    primary
+                    style={styles.addButton}
+                    title="add piece"
+                    onPress={() => this.props.navigation.goBack()}>
+                    <Text style={styles.buttonTextActive}>+</Text>
+                  </Button>
+                ) : (
+                  <Button
+                    bordered
+                    primary
+                    style={styles.addButton}
+                    title="add piece"
+                    onPress={() => this.props.navigation.navigate('AddPiece')}>
+                    <Text style={styles.buttonText}>+</Text>
+                  </Button>
+                )}
+              </View>
+            </View>
           </View>
         </View>
       </View>
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -75,4 +98,10 @@ const styles = StyleSheet.create({
     color: Colors.darkGreen,
     fontSize: 25,
   },
+  buttonTextActive: {
+    color: Colors.lightGreen,
+    fontSize: 25,
+  },
 });
+
+export default Header;

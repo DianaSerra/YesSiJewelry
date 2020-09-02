@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {View, SafeAreaView, StatusBar, Text} from 'react-native';
-import ShowAllScreen from './ShowAllScreen.js';
+import {View, SafeAreaView, Text} from 'react-native';
+import JewelryDisplay from '../components/JewelryDisplay.js';
 import Header from '../components/Header.js';
 
 import {connect} from 'react-redux';
@@ -18,18 +18,16 @@ class Home extends Component {
   }
   render() {
     const {isFetching, pieces} = this.props;
-    const piecesLength = pieces.length > 0;
     return (
       <View>
-        <StatusBar barStyle="light-content" />
+        <Header navigation={this.props.navigation} onAddPieceForm={false} />
         <SafeAreaView style={{paddingBottom: 160}}>
-          <Header />
           {isFetching ? (
             <View>
               <Text>Loading...</Text>
             </View>
           ) : (
-            <ShowAllScreen pieces={pieces} />
+            <JewelryDisplay dataSource={pieces} />
           )}
         </SafeAreaView>
       </View>

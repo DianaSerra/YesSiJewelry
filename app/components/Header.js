@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, Dimensions, StatusBar} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 import {Button, Text} from 'native-base';
 import {Colors} from '../styles/Colors';
-import {useNavigation} from '@react-navigation/native';
 
 //hardcoded values for the specific tablet this app will be used on
-const deviceWidth = Dimensions.get('window').width;
 const headerHeight = 82.20844628731922;
-const headerWidth = deviceWidth;
 const logoWidth = 187.7;
 
 class Header extends Component {
@@ -57,7 +54,7 @@ class Header extends Component {
 const styles = StyleSheet.create({
   headerContainer: {
     backgroundColor: Colors.lightGreen,
-    width: headerWidth,
+    width: '100%',
     height: headerHeight,
     flexDirection: 'row',
     paddingLeft: 0,

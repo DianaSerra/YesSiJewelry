@@ -34,8 +34,6 @@ class JewelryDisplay extends Component {
 }
 
 const styles = {
-  //container: {flex: 1},
-  //listContainer: {flex: 5.5},
   cardContainer: {
     flex: 1,
     flexDirection: 'column',

@@ -45,6 +45,11 @@
 		B7DAB4DD44724D52AA927CB4 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3DB2CEF729D4E72801481A2 /* rubicon-icon-font.ttf */; };
 		4A56478DDAFD46248C31E6B9 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A398A76C80FE4387B5527F69 /* SimpleLineIcons.ttf */; };
 		29EF16A26CBA419FB7C2F6B2 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 866F41AD9C3E40D69EB3C5FA /* Zocial.ttf */; };
+		A8CA5A388EB04748B240ABFC /* Signika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 998BEAC641AC43C1942823DE /* Signika-Bold.ttf */; };
+		57A89A75B8204572ABC169CC /* Signika-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F15DB13CEB8E4366813D05DE /* Signika-Light.ttf */; };
+		BF02F7D80106454E97560DB0 /* Signika-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF4100CFC3FB4DAD96CEB65E /* Signika-Medium.ttf */; };
+		C4C94CA759F440A19B762D83 /* Signika-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8371593586D74D3B8FE37B79 /* Signika-Regular.ttf */; };
+		238B3DD1D16A4C45807D6934 /* Signika-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AD4005DA1B946749CB100E4 /* Signika-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +114,11 @@
 		B3DB2CEF729D4E72801481A2 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A398A76C80FE4387B5527F69 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		866F41AD9C3E40D69EB3C5FA /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		998BEAC641AC43C1942823DE /* Signika-Bold.ttf */ = {isa = PBXFileReference; name = "Signika-Bold.ttf"; path = "../app/assets/fonts/Signika-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F15DB13CEB8E4366813D05DE /* Signika-Light.ttf */ = {isa = PBXFileReference; name = "Signika-Light.ttf"; path = "../app/assets/fonts/Signika-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AF4100CFC3FB4DAD96CEB65E /* Signika-Medium.ttf */ = {isa = PBXFileReference; name = "Signika-Medium.ttf"; path = "../app/assets/fonts/Signika-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8371593586D74D3B8FE37B79 /* Signika-Regular.ttf */ = {isa = PBXFileReference; name = "Signika-Regular.ttf"; path = "../app/assets/fonts/Signika-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5AD4005DA1B946749CB100E4 /* Signika-SemiBold.ttf */ = {isa = PBXFileReference; name = "Signika-SemiBold.ttf"; path = "../app/assets/fonts/Signika-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +258,11 @@
 				B3DB2CEF729D4E72801481A2 /* rubicon-icon-font.ttf */,
 				A398A76C80FE4387B5527F69 /* SimpleLineIcons.ttf */,
 				866F41AD9C3E40D69EB3C5FA /* Zocial.ttf */,
+				998BEAC641AC43C1942823DE /* Signika-Bold.ttf */,
+				F15DB13CEB8E4366813D05DE /* Signika-Light.ttf */,
+				AF4100CFC3FB4DAD96CEB65E /* Signika-Medium.ttf */,
+				8371593586D74D3B8FE37B79 /* Signika-Regular.ttf */,
+				5AD4005DA1B946749CB100E4 /* Signika-SemiBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -420,6 +435,11 @@
 				B7DAB4DD44724D52AA927CB4 /* rubicon-icon-font.ttf in Resources */,
 				4A56478DDAFD46248C31E6B9 /* SimpleLineIcons.ttf in Resources */,
 				29EF16A26CBA419FB7C2F6B2 /* Zocial.ttf in Resources */,
+				A8CA5A388EB04748B240ABFC /* Signika-Bold.ttf in Resources */,
+				57A89A75B8204572ABC169CC /* Signika-Light.ttf in Resources */,
+				BF02F7D80106454E97560DB0 /* Signika-Medium.ttf in Resources */,
+				C4C94CA759F440A19B762D83 /* Signika-Regular.ttf in Resources */,
+				238B3DD1D16A4C45807D6934 /* Signika-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

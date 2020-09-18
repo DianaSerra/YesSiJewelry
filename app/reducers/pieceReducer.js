@@ -1,9 +1,11 @@
 import {
   REQUEST_ALL_PIECE_DATA,
   RECEIVE_ALL_PIECE_DATA,
+  REQUEST_ADD_PIECE,
+  RECEIVE_ADD_PIECE,
 } from '../constants/index.js';
 
-function pieceReducer(
+export function pieces(
   state = {
     isFetching: false,
     items: [],
@@ -24,5 +26,16 @@ function pieceReducer(
       return state;
   }
 }
-
-export default pieceReducer;
+export function newPiece(state = {isCreating: false, newPiece: {}}, action) {
+  switch (action.type) {
+    case REQUEST_ADD_PIECE:
+      return Object.assign({}, state, {isCreating: true});
+    case RECEIVE_ADD_PIECE:
+      return Object.assign({}, state, {
+        isCreating: false,
+        newPiece: action.newPiece,
+      });
+    default:
+      return state;
+  }
+}

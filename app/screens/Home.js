@@ -11,10 +11,15 @@ class Home extends Component {
   constructor(props) {
     super(props);
   }
+  fetchPieces() {
+    this.props.dispatch(fetchAllPieceData());
+  }
   componentDidMount() {
     const {dispatch} = this.props;
-    console.log('componentDidMount');
     dispatch(fetchAllPieceData());
+  }
+  componentWillUnmount() {
+    this._unsubscribe();
   }
   render() {
     const {isFetching, pieces} = this.props;

@@ -13,7 +13,7 @@ import getTheme from '../native-base-theme/components';
 import commonColor from '../native-base-theme/variables/commonColor.js';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import AddPieceForm from './screens/AddPieceForm.js';
+import AddPieceScreen from './screens/AddPieceScreen.js';
 import Home from './screens/Home.js';
 import configureStore from './store/configureStore.js';
 const store = configureStore();
@@ -26,7 +26,7 @@ export default class App extends Component {
           <NavigationContainer>
             <Stack.Navigator initialRouteName="Home" headerMode="none">
               <Stack.Screen name="Home" component={Home} />
-              <Stack.Screen name="AddPiece" component={AddPieceForm} />
+              <Stack.Screen name="AddPiece" component={AddPieceScreen} />
             </Stack.Navigator>
           </NavigationContainer>
         </StyleProvider>

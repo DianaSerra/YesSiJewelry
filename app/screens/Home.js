@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.fetchPieces = this.fetchPieces.bind(this);
   }
   fetchPieces() {
     this.props.dispatch(fetchAllPieceData());
@@ -18,9 +19,7 @@ class Home extends Component {
     const {dispatch} = this.props;
     dispatch(fetchAllPieceData());
   }
-  componentWillUnmount() {
-    this._unsubscribe();
-  }
+
   render() {
     const {isFetching, pieces} = this.props;
     return (
@@ -32,7 +31,11 @@ class Home extends Component {
               <Text>Loading...</Text>
             </View>
           ) : (
-            <JewelryDisplay dataSource={pieces} />
+            <JewelryDisplay
+              dataSource={pieces}
+              onRefresh={this.fetchPieces}
+              refreshing={isFetching}
+            />
           )}
         </SafeAreaView>
       </View>

@@ -28,6 +28,8 @@ class JewelryDisplay extends Component {
           </View>
         )}
         numColumns={2}
+        onRefresh={() => this.props.onRefresh()}
+        refreshing={this.props.refreshing}
       />
     );
   }

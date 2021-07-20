@@ -17,7 +17,7 @@
     "native-base": "^2.13.12",
     "nodejs": "0.0.0",
     "react": "16.11.0",
-    "react-native": "^0.63.2",
+    "react-native": "^0.64.1",
     "react-native-gesture-handler": "^1.7.0",
     "react-native-multiple-select": "^0.5.5",
     "react-native-reanimated": "^1.13.0",
